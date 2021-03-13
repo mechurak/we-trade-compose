@@ -31,7 +31,6 @@ private val Montserrat = FontFamily(
     Font(R.font.montserrat_extrabold, FontWeight.W800),
 )
 
-
 // Set of Material typography styles to start with
 val typography = Typography(
     h1 = TextStyle(
