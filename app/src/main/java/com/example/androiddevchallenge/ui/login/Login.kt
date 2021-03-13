@@ -1,11 +1,7 @@
 package com.example.androiddevchallenge.ui.login
 
-import android.graphics.Color
-import android.inputmethodservice.Keyboard
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,7 +10,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material.Button
 import androidx.compose.material.ButtonDefaults
 import androidx.compose.material.Icon
@@ -38,7 +33,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.constraintlayout.widget.Placeholder
 import androidx.navigation.NavController
 import androidx.navigation.compose.navigate
 import com.example.androiddevchallenge.R
@@ -57,27 +51,17 @@ fun LoginScreen(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colors.surface
     ) {
-        Row {
-            Column(
-                Modifier
-                    .height(320.dp)
-                    .width(20.dp)
-                    .background(androidx.compose.ui.graphics.Color.Blue)
-            ) {
-
-            }
-            Column(
-                Modifier
-                    .fillMaxWidth()
-                    .height(320.dp)
-            ) {
-                Image(
-                    painterResource(id = R.drawable.login_bg),
-                    contentDescription = "bg",
-                    alignment = Alignment.TopCenter,
-                    contentScale = ContentScale.FillHeight,
-                )
-            }
+        Column(
+            Modifier
+                .fillMaxWidth()
+                .height(320.dp)
+        ) {
+            Image(
+                painterResource(id = R.drawable.login_bg),
+                contentDescription = "bg",
+                alignment = Alignment.TopCenter,
+                contentScale = ContentScale.FillHeight,
+            )
         }
     }
 
