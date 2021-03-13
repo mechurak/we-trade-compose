@@ -16,11 +16,9 @@
 package com.example.androiddevchallenge
 
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Surface
-import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
@@ -39,6 +37,12 @@ class MainActivity : AppCompatActivity() {
                 MyApp()
             }
         }
+
+        // https://stackoverflow.com/a/29311321
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,
+            WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS
+        )
     }
 }
 
@@ -47,9 +51,9 @@ class MainActivity : AppCompatActivity() {
 fun MyApp() {
     val navController = rememberNavController()
     NavHost(navController, startDestination = "welcome") {
-        composable("welcome") { WelcomeScreen(navController) }
-        composable("login") { LoginScreen(navController) }
-        composable("home") { HomeScreen(navController) }
+        composable("welcome") { WelcomeScreen(navController = navController) }
+        composable("login") { LoginScreen(navController = navController) }
+        composable("home") { HomeScreen(navController = navController) }
     }
 }
 
